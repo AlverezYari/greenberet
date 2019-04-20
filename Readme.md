@@ -1,1 +1,1 @@
-##Green Beret - The Python Brigade client
+Green Beret - The Python Brigade client
