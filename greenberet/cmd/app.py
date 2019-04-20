@@ -1,4 +1,5 @@
 import click
+from .project_func import *
 
 @click.group()
 @click.option('--version', help="Prints your green beret version number")
@@ -32,7 +33,7 @@ def cluster(ctx,name,server,info):
 @main.command()
 @click.option('-l','--list',  help='List project deployed in your target cluster', is_flag=True)
 @click.option('-g','--get', help='Get a specific project by id', type=str)
-@click.option('-c', '--create', help="Create a new project", )
+@click.option('-c', '--create', help="Create a new project", is_flag=True)
 @click.option('-d','--delete', help='Deletes project from cluster', type=str)
 @click.pass_context
 def project(ctx,list,get,create,delete):
@@ -44,10 +45,13 @@ def project(ctx,list,get,create,delete):
         click.echo('List Projects')
     elif get != None:
         #call get function
-        click.echo('Get Projects')
+        projectId = get
+        projectGet(projectId)
     elif create != None:
         #call Create function
-        click.echo('Create a new project')
+        print(create)
+        projectName = create
+        projectCreate(create)
     elif delete != None:
         #call Delete function
         click.echo('Delete a project')
