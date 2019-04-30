@@ -5,18 +5,18 @@ from greenberet.cli import pass_context
 ## Cluster functions for Green Beret
 #
 
-@click.group()
+@click.group(help='Commands for setting up cluster connections')
 @pass_context
 def cli():
     pass
 
-@click.command()
+@click.command(help='list all the configured clusters')
 def list():
-    print('List Configured clusters')
+    print('list configured clusters')
 
-@click.command()
+@click.command(help='setup a new cluster connection')
 def config():
-    print('Configure a new cluster')
+    print('configure a new cluster')
 
 cli.add_command(list)
 cli.add_command(config)

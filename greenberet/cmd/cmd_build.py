@@ -5,26 +5,26 @@ from greenberet.cli import pass_context
 ## Build functions for Green Beret
 #
 
-@click.group()
+@click.group(help='Commands for interacting with Brigade Builds')
 @pass_context
 def cli():
     pass
 
 @click.command(help='list builds')
 def list():
-    print('list builds')
+    print('list builds from selected cluster')
 
 @click.command(help='get a build')
 def get():
-    print('get a build')
+    print('get a build from selected cluster')
 
 @click.command(help='deletes a build')
 def delete():
-    print('deletes a build')
+    print('deletes a build from selected cluster')
 
 @click.command(help='deletes all builds for a project')
 def delete_all():
-    print('deletes all builds for a project')
+    print('deletes all builds for a project on selected cluster')
 
 @click.command(help='show build logs')
 def logs():
