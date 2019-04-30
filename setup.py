@@ -10,6 +10,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        gb=greenberet.cmd.app:start
+        gb=greenberet.cli:cli
     ''',
 )
